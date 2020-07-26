@@ -2,6 +2,7 @@
 #include <SDL2/SDL_image.h>
 #include <iostream>
 #include "RenderWindow.hpp"
+#include "Entity.hpp"
 
 int		main(int argc, char **argv)
 {
@@ -12,6 +13,8 @@ int		main(int argc, char **argv)
 	RenderWindow window("Game v1.0", 1280, 720);
 
 	SDL_Texture *groundTexture = window.loadTexture("res/gfx/tile.png");
+
+	Entity platform0(100, 100, groundTexture);
 
 	bool gameRunning = true;
 
@@ -25,7 +28,7 @@ int		main(int argc, char **argv)
 				gameRunning = false;
 		}
 		window.clear();
-		window.render(groundTexture);
+		window.render(platform0);
 		window.display();
 	}
 	window.cleanUp();
