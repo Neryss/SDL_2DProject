@@ -32,13 +32,11 @@ SDL_Rect Entity::getCurrentFrame()
 }
 
 void Entity::setX(float p_x)
-:p_x(x)
 {
-
+	x = p_x;
 }
 
 void Entity::setY(float p_y)
-:p_y(y)
 {
-
+	y = p_y;
 }
