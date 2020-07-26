@@ -3,6 +3,18 @@
 	{
 		"selected_items":
 		[
+			[
+				"w",
+				"w"
+			],
+			[
+				"get",
+				"getCurrentFrame"
+			],
+			[
+				"y",
+				"y"
+			]
 		]
 	},
 	"build_system": "",
@@ -121,7 +133,7 @@
 	{
 		"height": 0.0
 	},
-	"pinned_build_system": "Build Release",
+	"pinned_build_system": "Build Debug",
 	"replace":
 	{
 		"height": 0.0

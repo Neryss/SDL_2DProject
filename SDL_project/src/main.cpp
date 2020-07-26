@@ -14,8 +14,9 @@ int		main(int argc, char **argv)
 
 	SDL_Texture *groundTexture = window.loadTexture("res/gfx/tile.png");
 
-	Entity platform0(100, 50, groundTexture);
-
+	Entity entities[3] = {Entity(0, 0, groundTexture), 
+						  Entity(15, 0, groundTexture),
+						  Entity(30, 0, groundTexture)};
 	bool gameRunning = true;
 
 	SDL_Event event;
@@ -28,7 +29,10 @@ int		main(int argc, char **argv)
 				gameRunning = false;
 		}
 		window.clear();
-		window.render(platform0);
+		for(int i = 0; i < 3; i++)
+		{
+			window.render(entities[i]);
+		}
 		window.display();
 	}
 	window.cleanUp();
