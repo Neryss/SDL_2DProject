@@ -14,7 +14,7 @@ int		main(int argc, char **argv)
 
 	SDL_Texture *groundTexture = window.loadTexture("res/gfx/tile.png");
 
-	Entity platform0(100, 100, groundTexture);
+	Entity platform0(100, 50, groundTexture);
 
 	bool gameRunning = true;
 
