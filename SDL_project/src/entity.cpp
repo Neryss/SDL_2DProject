@@ -30,3 +30,15 @@ SDL_Rect Entity::getCurrentFrame()
 {
 	return(currentFrame);
 }
+
+void Entity::setX(float p_x)
+:p_x(x)
+{
+
+}
+
+void Entity::setY(float p_y)
+:p_y(y)
+{
+
+}
