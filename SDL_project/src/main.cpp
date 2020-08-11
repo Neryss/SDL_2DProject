@@ -19,11 +19,11 @@ int		main(int argc, char **argv)
 	// 					  Entity(15, 0, groundTexture),
 	// 					  Entity(30, 0, groundTexture)};
 
-    std::vector<Entity> entitiees = {Entity(0, 0, groundTexture), 
-			  					     Entity(15, 0, groundTexture),
-	 					  			 Entity(30, 0, groundTexture)};
+    std::vector<Entity> entitiees = {Entity(Vector2f(0, 0), groundTexture), 
+			  					     Entity(Vector2f(15, 0), groundTexture),
+	 					  			 Entity(Vector2f(30, 0), groundTexture)};
 	{
-		Entity test(100, 50, groundTexture);
+		Entity test(Vector2f(100, 20), groundTexture);
 
 		entitiees.push_back(test);
 	}
