@@ -22,6 +22,13 @@
 			"cmd": "g++ -c src/*.cpp -std=c++14 -O3 -Wall -m64 -I include -I C:/SDL2-w64/include && g++ *.o -o bin/release/main -s -L C:/SDL2-w64/lib -lmingw32 -lSDL2main -lSDL2 -lSDL2_image && start bin/release/main",
 			"selector": "source.c++",
 			"shell": true
+		},
+		{
+			"name": "Mac debug",
+			"working_dir": "${project_path}",
+			"cmd": "g++ -c src/*.cpp -std=c++14 -g -Wall -m64 -I include -I include && g++ *.o -o bin/debug/main -lSDL2main -lSDL2 -lSDL2_image && ./bin/debug/main",
+			"selector": "source.c++",
+			"shell": true
 		}
 	]
 }
