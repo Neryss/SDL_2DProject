@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"p",
+				"p_x"
+			],
+			[
+				"entit",
+				"entitiees"
+			],
+			[
 				"w",
 				"w"
 			],
@@ -66,7 +74,7 @@
 	],
 	"find":
 	{
-		"height": 0.0
+		"height": 40.0
 	},
 	"find_in_files":
 	{
@@ -80,6 +88,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"keystate"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -96,7 +105,7 @@
 	},
 	"incremental_find":
 	{
-		"height": 0.0
+		"height": 27.0
 	},
 	"input":
 	{
@@ -136,7 +145,7 @@
 	"pinned_build_system": "Build Debug",
 	"replace":
 	{
-		"height": 0.0
+		"height": 50.0
 	},
 	"save_all_on_build": true,
 	"select_file":
