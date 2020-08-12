@@ -30,7 +30,9 @@ int		main(int argc, char **argv)
 	bool gameRunning = true;
 
 	SDL_Event event;
-
+	//testing purposes
+	Vector2f test(10, 0);
+	test.print();
 	while(gameRunning)
 	{
 		while(SDL_PollEvent(&event))
@@ -42,6 +44,9 @@ int		main(int argc, char **argv)
 		for(Entity &e: entitiees)
 		{
 			window.render(e);
+			//testing vector debugging
+			Vector2f temp(e.getPos());
+			temp.print();
 		}
 		window.display();
 	}
