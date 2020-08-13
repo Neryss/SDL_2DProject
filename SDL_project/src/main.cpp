@@ -27,6 +27,12 @@ int		main(int argc, char **argv)
 
 		entitiees.push_back(test);
 	}
+	//test for first vector operator
+	Vector2f t1(0, 0);
+	Vector2f t2(10, 10);
+	Vector2f res(0, 0);
+	res = t1 + t2;
+	res.print();
 	bool gameRunning = true;
 
 	SDL_Event event;
@@ -43,7 +49,14 @@ int		main(int argc, char **argv)
 					gameRunning = false;
 					break;
 				case SDL_KEYDOWN:
-					std::cout << "button pressed" << std::endl;
+					switch(event.key.keysym.sym)
+					{
+						case SDLK_a:
+							std::cout << "clicked a" << std::endl;
+							break;
+					}
+				case SDL_MOUSEMOTION:
+					std::cout << event.motion.x << ',' << event.motion.y << std::endl;
 					break;
 			}
 		}
