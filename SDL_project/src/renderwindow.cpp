@@ -4,7 +4,7 @@
 #include "RenderWindow.hpp"
 #include "Entity.hpp"
 
-bool init()
+bool init_video()
 {
 	if(SDL_Init(SDL_INIT_VIDEO) > 0)
 	{
