@@ -4,6 +4,20 @@
 #include "RenderWindow.hpp"
 #include "Entity.hpp"
 
+bool init()
+{
+	if(SDL_Init(SDL_INIT_VIDEO) > 0)
+	{
+		std::cout << "SDL_Init ecountered an error : " << SDL_GetError() << std::endl;
+		return(0);
+	}
+	if(!(IMG_Init(IMG_INIT_PNG)))
+	{
+		std::cout << "SDL_Init_Png has ecountered an error : " << SDL_GetError() << std::endl;
+		return(0);
+	}
+	return(true);
+}
 RenderWindow::RenderWindow(const char *p_title, int p_w, int p_h)
 	:window(NULL), renderer(NULL)
 {

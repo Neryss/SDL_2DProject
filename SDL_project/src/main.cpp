@@ -7,12 +7,8 @@
 
 int		main(int argc, char **argv)
 {
-	if(SDL_Init(SDL_INIT_VIDEO) > 0)
-		std::cout << "SDL_Init HAS FAILED. SDL_ERROR: " << SDL_GetError() << std::endl;
-	if(!(IMG_Init(IMG_INIT_PNG)))
-		std::cout << "IMG init HAS FAILED. Error: " << SDL_GetError() << std::endl;
+	init();
 	RenderWindow window("Game v1.0", 1280, 720);
-
 	SDL_Texture *groundTexture = window.loadTexture("res/gfx/tile.png");
 
 	// Entity entities[3] = {Entity(0, 0, groundTexture), 
