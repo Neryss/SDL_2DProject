@@ -13,7 +13,12 @@ public:
 	void render(Entity &p_entity);
 	void display();
 	void pollEvents();
+	bool isClosed()
+	{
+		return(p_closed);
+	}
 private:
 	SDL_Window *window;
 	SDL_Renderer *renderer;
+	bool p_closed = false;
 };

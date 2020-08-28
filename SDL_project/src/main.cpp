@@ -34,39 +34,13 @@ int		main(int argc, char **argv)
 	Vector2f mousePos(0, 0);
 	res = t1 + t2;
 	res.print();
-	bool gameRunning = true;
 
-	SDL_Event event;
 	//testing purposes
 	// Vector2f test(10, 0);
 	// test.print();
-	while(gameRunning)
+	while(!window.isClosed())
 	{
-		while(SDL_PollEvent(&event))
-		{
-			switch(event.type)
-			{
-				case SDL_QUIT:
-					gameRunning = false;
-					break;
-				case SDL_MOUSEMOTION:
-				{
-					mousePos = Vector2f(event.motion.x, event.motion.y);
-					entitiees[2].setPos(mousePos);
-					std::cout << event.motion.x << ',' << event.motion.y << std::endl;
-				}
-				case SDL_KEYDOWN:
-					switch(event.key.keysym.sym)
-					{
-						case SDLK_a:
-						{
-							entitiees[1].setPos(entitiees[1].getPos() + Vector2f(0.5, 0));
-							std::cout << "clicked a" << std::endl;
-							break;
-						}
-					}
-			}
-		}
+		window.pollEvents();
 		window.clear();
 		for(Entity &e: entitiees)
 		{

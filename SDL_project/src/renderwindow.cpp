@@ -58,20 +58,28 @@ void RenderWindow::display()
 	SDL_RenderPresent(renderer);
 }
 
-void RenderWindow::pollEvents(bool isRunning)
+void RenderWindow::pollEvents()
 {
+	SDL_Event event;
+
 	if(SDL_PollEvent(&event))
 	{
 		switch(event.type)
 		{
 			case SDL_QUIT:
-				isRunning = false;
+				p_closed = true;
 				break;
+			case SDL_MOUSEMOTION:
+			{
+				std::cout << event.motion.x << ", " << event.motion.y << std::endl;
+				break;
+			}
 			case SDL_KEYDOWN:
 			switch(event.key.keysym.sym)
 			{
 				case SDLK_q:
-
+				std::cout << "pressed q" << std::endl;
+				break;
 			}
 		}
 	}
