@@ -52,8 +52,11 @@ int		main(int argc, char **argv)
 					switch(event.key.keysym.sym)
 					{
 						case SDLK_a:
+						{
+							entitiees[1].setPos(entitiees[1].getPos() + Vector2f(1, 0));
 							std::cout << "clicked a" << std::endl;
 							break;
+						}
 					}
 				case SDL_MOUSEMOTION:
 					std::cout << event.motion.x << ',' << event.motion.y << std::endl;

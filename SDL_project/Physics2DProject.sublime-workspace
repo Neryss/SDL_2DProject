@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"vect",
+				"Vector2f"
+			],
+			[
 				"p",
 				"p_x"
 			],
@@ -69,12 +73,15 @@
 	},
 	"file_history":
 	[
+		"/C/Users/kuroy/Desktop/SDL_2DProject/SDL_project/include/PlayerInput.hpp",
+		"/C/Users/kuroy/Desktop/SDL_2DProject/SDL_project/src/main.cpp",
+		"/C/Users/kuroy/Desktop/SDL_2DProject/SDL_project/include/KeyPressed.hpp",
 		"/C/Users/kuroy/Desktop/2D sdl project/Physics2DProject.sublime-project",
 		"/C/Users/kuroy/AppData/Roaming/Sublime Text 3/Packages/Default/exec.py"
 	],
 	"find":
 	{
-		"height": 40.0
+		"height": 27.0
 	},
 	"find_in_files":
 	{
@@ -88,6 +95,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"Vector2f",
 			"keystate"
 		],
 		"highlight": true,
