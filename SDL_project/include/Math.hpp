@@ -37,6 +37,10 @@ struct Vector2f
 	{
 		return(Vector2f(x * other.x, y * other.y));
 	}
+	Vector2f operator=(const Vector2f &other)
+	{
+		return(Vector2f(x = other.x, y = other.y));
+	}
 
 	Vector2f operator+=(const Vector2f &o);
 	Vector2f operator-=(const Vector2f &o);
