@@ -12,6 +12,7 @@ public:
 	void clear();
 	void render(Entity &p_entity);
 	void display();
+	void pollEvents();
 private:
 	SDL_Window *window;
 	SDL_Renderer *renderer;
