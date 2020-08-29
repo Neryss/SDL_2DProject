@@ -5,9 +5,20 @@
 #include "RenderWindow.hpp"
 #include "Entity.hpp"
 
+// void pollEvents(Window &window, Entity &entity)
+// {
+// 	SDL_Event event;
+
+// 	if(SDL_PollEvent(&event))
+// 	{
+
+// 	}
+// }
+
 int		main(int argc, char **argv)
 {
-	init_video();
+	if(!init())
+		std::cout << "error" << std::endl;
 	RenderWindow window("Game v1.0", 1280, 720);
 	SDL_Texture *groundTexture = window.loadTexture("res/gfx/tile.png");
 
@@ -28,6 +39,7 @@ int		main(int argc, char **argv)
 
 	while(!window.isClosed())
 	{
+		entitiees[1].pollEvents();
 		window.pollEvents();
 		window.clear();
 		for(Entity &e: entitiees)

@@ -11,6 +11,33 @@ Entity::Entity(Vector2f p_pos, SDL_Texture *p_tex)
 	currentFrame.h = 16;
 }
 
+void Entity::pollEvents()
+{
+	SDL_Event event;
+
+	if(SDL_PollEvent(&event))
+	{
+		if(event.type == SDL_KEYDOWN)
+		{
+			switch(event.key.keysym.sym)
+			{
+				case SDLK_q:
+					setPos(Vector2f(getPos().x - 5, getPos().y));
+					break;
+				case SDLK_d:
+					setPos(Vector2f(getPos().x + 5, getPos().y));
+					break;
+				case SDLK_s:
+					setPos(Vector2f(getPos().x, getPos().y + 5));
+					break;
+				case SDLK_z:
+					setPos(Vector2f(getPos().x, getPos().y - 5));
+					break;
+			}
+		}
+	}
+}
+
 void Entity::setPos(Vector2f newPos)
 {
 	pos = newPos;

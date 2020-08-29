@@ -4,7 +4,7 @@
 #include "RenderWindow.hpp"
 #include "Entity.hpp"
 
-bool init_video()
+bool init()
 {
 	if(SDL_Init(SDL_INIT_VIDEO) > 0)
 	{
@@ -86,13 +86,6 @@ void RenderWindow::pollEvents()
 			case SDL_MOUSEMOTION:
 			{
 				std::cout << event.motion.x << ", " << event.motion.y << std::endl;
-				break;
-			}
-			case SDL_KEYDOWN:
-			switch(event.key.keysym.sym)
-			{
-				case SDLK_q:
-				std::cout << "pressed q" << std::endl;
 				break;
 			}
 		}
