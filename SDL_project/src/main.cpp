@@ -5,15 +5,16 @@
 #include "RenderWindow.hpp"
 #include "Entity.hpp"
 
-// void pollEvents(Window &window, Entity &entity)
-// {
-// 	SDL_Event event;
+void pollEvents(RenderWindow &window, Entity &entity)
+{
+	SDL_Event event;
 
-// 	if(SDL_PollEvent(&event))
-// 	{
-
-// 	}
-// }
+	if(SDL_PollEvent(&event))
+	{
+		window.pollEvents(event);
+		entity.pollEvents(event);
+	}
+}
 
 int		main(int argc, char **argv)
 {
@@ -39,8 +40,9 @@ int		main(int argc, char **argv)
 
 	while(!window.isClosed())
 	{
-		entitiees[1].pollEvents();
-		window.pollEvents();
+		//entitiees[1].pollEvents();
+		//window.pollEvents();
+		pollEvents(window, entitiees[1]);
 		window.clear();
 		for(Entity &e: entitiees)
 		{

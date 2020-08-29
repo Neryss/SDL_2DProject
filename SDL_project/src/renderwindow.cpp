@@ -72,22 +72,17 @@ void RenderWindow::display()
 	SDL_RenderPresent(renderer);
 }
 
-void RenderWindow::pollEvents()
+void RenderWindow::pollEvents(SDL_Event &event)
 {
-	SDL_Event event;
-
-	if(SDL_PollEvent(&event))
+	switch(event.type)
 	{
-		switch(event.type)
+		case SDL_QUIT:
+			p_closed = true;
+			break;
+		case SDL_MOUSEMOTION:
 		{
-			case SDL_QUIT:
-				p_closed = true;
-				break;
-			case SDL_MOUSEMOTION:
-			{
-				std::cout << event.motion.x << ", " << event.motion.y << std::endl;
-				break;
-			}
+			std::cout << event.motion.x << ", " << event.motion.y << std::endl;
+			break;
 		}
 	}
 }

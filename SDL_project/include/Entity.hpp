@@ -12,7 +12,7 @@ public:
 		return(pos);
 	}
 	void setPos(Vector2f newPos);
-	void pollEvents();
+	void pollEvents(SDL_Event &event);
 	SDL_Texture *getTex();
 	SDL_Rect getCurrentFrame();
 private:

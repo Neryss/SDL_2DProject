@@ -13,7 +13,7 @@ public:
 	void clear();
 	void render(Entity &p_entity);
 	void display();
-	void pollEvents();
+	void pollEvents(SDL_Event &event);
 	bool isClosed()
 	{
 		return(p_closed);
