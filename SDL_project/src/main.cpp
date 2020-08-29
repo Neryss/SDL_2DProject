@@ -22,8 +22,9 @@ int		main(int argc, char **argv)
 		std::cout << "error" << std::endl;
 	RenderWindow window("Game v1.0", 1280, 720);
 	SDL_Texture *groundTexture = window.loadTexture("res/gfx/tile.png");
+	SDL_Texture *playerTexture = window.loadTexture("res/gfx/player_no_anim.png");
 
-    std::vector<Entity> entitiees = {Entity(Vector2f(0, 0), groundTexture), 
+    std::vector<Entity> entitiees = {Entity(Vector2f(0, 0), playerTexture), 
 			  					     Entity(Vector2f(15, 0), groundTexture),
 	 					  			 Entity(Vector2f(30, 0), groundTexture)};
 	{
@@ -40,16 +41,12 @@ int		main(int argc, char **argv)
 
 	while(!window.isClosed())
 	{
-		//entitiees[1].pollEvents();
-		//window.pollEvents();
-		pollEvents(window, entitiees[1]);
+		pollEvents(window, entitiees[0]);
 		window.clear();
+		entitiees[1].setPos(window.getMousePos() * Vector2f(.15, .15));
 		for(Entity &e: entitiees)
 		{
 			window.render(e);
-			//testing vector debugging
-			// Vector2f temp(e.getPos());
-			// temp.print();
 		}
 		window.display();
 	}

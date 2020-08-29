@@ -81,7 +81,9 @@ void RenderWindow::pollEvents(SDL_Event &event)
 			break;
 		case SDL_MOUSEMOTION:
 		{
-			std::cout << event.motion.x << ", " << event.motion.y << std::endl;
+			//std::cout << event.motion.x << ", " << event.motion.y << std::endl;
+			mousePos = Vector2f(event.motion.x, event.motion.y);
+			mousePos.print();
 			break;
 		}
 	}

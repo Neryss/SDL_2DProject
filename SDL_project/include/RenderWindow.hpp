@@ -18,9 +18,14 @@ public:
 	{
 		return(p_closed);
 	}
+	Vector2f getMousePos()
+	{
+		return(mousePos);
+	}
 private:
 	SDL_Window *window;
 	SDL_Renderer *renderer;
+	Vector2f mousePos;
 	bool p_closed = false;
 };
 
