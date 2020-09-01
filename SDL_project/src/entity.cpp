@@ -18,16 +18,20 @@ void Entity::pollEvents(SDL_Event &event)
 		switch(event.key.keysym.sym)
 		{
 			case SDLK_q:
-				setPos(Vector2f(getPos().x - 5, getPos().y));
+				moveEntity(Vector2f(-5, 0));
+				//setPos(Vector2f(getPos().x - 5, getPos().y));
 				break;
 			case SDLK_d:
-				setPos(Vector2f(getPos().x + 5, getPos().y));
+				moveEntity(Vector2f(5, 0));
+				//setPos(Vector2f(getPos().x + 5, getPos().y));
 				break;
 			case SDLK_s:
-				setPos(Vector2f(getPos().x, getPos().y + 5));
+				moveEntity(Vector2f(0, 5));
+				//setPos(Vector2f(getPos().x, getPos().y + 5));
 				break;
 			case SDLK_z:
-				setPos(Vector2f(getPos().x, getPos().y - 5));
+				moveEntity(Vector2f(0, -5));
+				//setPos(Vector2f(getPos().x, getPos().y - 5));
 				break;
 		}
 	}	
@@ -37,6 +41,13 @@ void Entity::setPos(Vector2f newPos)
 {
 	pos = newPos;
 }
+
+void Entity::moveEntity(Vector2f velocity)
+{
+	Vector2f actualPos = this->getPos();
+	this->setPos(actualPos + velocity);
+}
+
 SDL_Texture *Entity::getTex()
 {
 	return(tex);

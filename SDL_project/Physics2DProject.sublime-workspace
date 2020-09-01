@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"ve",
+				"velocity"
+			],
+			[
+				"get",
+				"getPos"
+			],
+			[
 				"vect",
 				"Vector2f"
 			],
@@ -18,10 +26,6 @@
 			[
 				"w",
 				"w"
-			],
-			[
-				"get",
-				"getCurrentFrame"
 			],
 			[
 				"y",
