@@ -18,19 +18,19 @@ void Entity::pollEvents(SDL_Event &event)
 		switch(event.key.keysym.sym)
 		{
 			case SDLK_q:
-				moveEntity(Vector2f(-5, 0));
+				moveEntity(Vector2f(-50, 0));
 				//setPos(Vector2f(getPos().x - 5, getPos().y));
 				break;
 			case SDLK_d:
-				moveEntity(Vector2f(5, 0));
+				moveEntity(Vector2f(50, 0));
 				//setPos(Vector2f(getPos().x + 5, getPos().y));
 				break;
 			case SDLK_s:
-				moveEntity(Vector2f(0, 5));
+				moveEntity(Vector2f(0, 50));
 				//setPos(Vector2f(getPos().x, getPos().y + 5));
 				break;
 			case SDLK_z:
-				moveEntity(Vector2f(0, -5));
+				moveEntity(Vector2f(0, -50));
 				//setPos(Vector2f(getPos().x, getPos().y - 5));
 				break;
 		}
