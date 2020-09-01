@@ -24,7 +24,7 @@ int		main(int argc, char **argv)
 	SDL_Texture *groundTexture = window.loadTexture("res/gfx/tile.png");
 	SDL_Texture *playerTexture = window.loadTexture("res/gfx/player_no_anim.png");
 
-    std::vector<Entity> entitiees = {Entity(Vector2f(0, 0), playerTexture), 
+    std::vector<Entity> entitiees = {Entity(Vector2f(1, 1), playerTexture), 
 			  					     Entity(Vector2f(15, 0), groundTexture),
 	 					  			 Entity(Vector2f(30, 0), groundTexture)};
 	{

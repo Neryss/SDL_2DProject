@@ -44,8 +44,12 @@ void Entity::setPos(Vector2f newPos)
 
 void Entity::moveEntity(Vector2f velocity)
 {
+	double delta_time = 1.0/60.0;
+	printf("%f\n", delta_time);
 	Vector2f actualPos = this->getPos();
-	this->setPos(actualPos + velocity);
+	Vector2f newPos = actualPos + Vector2f(velocity.x * delta_time, velocity.y * delta_time);
+	setPos(newPos);
+	newPos.print();
 }
 
 SDL_Texture *Entity::getTex()
