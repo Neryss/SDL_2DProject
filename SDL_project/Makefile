@@ -1,6 +1,5 @@
 NAME = build
 SRC = src/entity.cpp src/math.cpp src/main.cpp src/renderwindow.cpp
-OBJS = $(SRC:.c=.o)
 
 all: $(NAME)
 

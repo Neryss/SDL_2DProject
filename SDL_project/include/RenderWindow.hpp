@@ -3,6 +3,9 @@
 #include <SDL2/SDL_image.h>
 #include "Entity.hpp"
 
+#define WIDTH 720
+#define HEIGHT 360
+
 class RenderWindow
 {
 public:

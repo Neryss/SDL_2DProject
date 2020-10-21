@@ -20,7 +20,7 @@ int		main(int argc, char **argv)
 {
 	if(!init())
 		std::cout << "error" << std::endl;
-	RenderWindow window("Game v1.0", 1280, 720);
+	RenderWindow window("Game v1.0", WIDTH, HEIGHT);
 	SDL_Texture *groundTexture = window.loadTexture("res/gfx/tile.png");
 	SDL_Texture *playerTexture = window.loadTexture("res/gfx/player_no_anim.png");
 
