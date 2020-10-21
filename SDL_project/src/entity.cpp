@@ -60,7 +60,7 @@ void Entity::moveEntity(Vector2f velocity)
 		newPos.y = 0;
 		printf("DEBUG OOF");
 	}
-	if (newPos.y > HEIGHT - 16)
+	if (newPos.y > HEIGHT / (delta_time + 16))
 		printf("BIG OOF YIKES\n");
 	setPos(newPos);
 	newPos.print();

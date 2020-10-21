@@ -2,8 +2,10 @@
 #include <SDL2/SDL_image.h>
 #include <iostream>
 #include <vector>
+
 #include "RenderWindow.hpp"
 #include "Entity.hpp"
+#include "Utils.hpp"
 
 void pollEvents(RenderWindow &window, Entity &entity)
 {
