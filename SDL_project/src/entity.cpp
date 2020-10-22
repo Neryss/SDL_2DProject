@@ -14,28 +14,28 @@ Entity::Entity(Vector2f p_pos, SDL_Texture *p_tex)
 
 void Entity::pollEvents(SDL_Event &event)
 {
-	if(event.type == SDL_KEYDOWN)
+	playerMove();
+}
+
+void Entity::playerMove()
+{
+	std::cout << "entered playermove" << std::endl;
+	Vector2f currentAxis = Vector2f(0, 0);
+
+	const Uint8 *keyState = SDL_GetKeyboardState(NULL);
+	if (keyState[SDLK_a])
+		currentAxis -= Vector2f(50, 0);
+	if (keyState[SDLK_d])
 	{
-		switch(event.key.keysym.sym)
-		{
-			case SDLK_q:
-				moveEntity(Vector2f(-50, 0));
-				//setPos(Vector2f(getPos().x - 5, getPos().y));
-				break;
-			case SDLK_d:
-				moveEntity(Vector2f(50, 0));
-				//setPos(Vector2f(getPos().x + 5, getPos().y));
-				break;
-			case SDLK_s:
-				moveEntity(Vector2f(0, 50));
-				//setPos(Vector2f(getPos().x, getPos().y + 5));
-				break;
-			case SDLK_z:
-				moveEntity(Vector2f(0, -50));
-				//setPos(Vector2f(getPos().x, getPos().y - 5));
-				break;
-		}
-	}	
+		std::cout << "Yikes";
+		currentAxis += Vector2f(50, 0);
+	}
+	if (keyState[SDLK_w])
+		currentAxis -= Vector2f(0, 50);
+	if (keyState[SDLK_a])
+		currentAxis += Vector2f(0, 50);
+	std::cout << "current axis is" << currentAxis.x << ", " << currentAxis.y << std::endl;
+	moveEntity(currentAxis);
 }
 
 void Entity::setPos(Vector2f newPos)

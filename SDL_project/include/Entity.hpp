@@ -11,6 +11,7 @@ public:
 	{
 		return(pos);
 	}
+	void playerMove();
 	void setPos(Vector2f newPos);
 	void moveEntity(Vector2f velocity);
 	void pollEvents(SDL_Event &event);

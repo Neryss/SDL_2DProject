@@ -49,7 +49,7 @@ int		main(int argc, char **argv)
 
 	while(!window.isClosed())
 	{
-		int startTicks = SDL_GetTicks();
+		//int startTicks = SDL_GetTicks();
 		float newTime = utils::hireTimeInSeconds();
 		float frameTime = newTime - currentTime;
 
@@ -63,7 +63,7 @@ int		main(int argc, char **argv)
 		}
 
 		window.clear();
-		entitiees[1].setPos(window.getMousePos() * Vector2f(.15, .15));
+		entitiees[1].setPos(window.getMousePos());
 		for(Entity &e: entitiees)
 		{
 			window.render(e);
