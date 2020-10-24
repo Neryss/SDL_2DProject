@@ -60,11 +60,11 @@ int		main(int argc, char **argv)
 		while(accumulator >= deltaTime)
 		{
 			pollEvents(window, entitiees[0]);
+			entitiees[1].setPos(window.getMousePos());
 			accumulator -= deltaTime;
 		}
 
 		window.clear();
-		entitiees[1].setPos(window.getMousePos());
 		for(Entity &e: entitiees)
 		{
 			window.render(e);
@@ -77,6 +77,7 @@ int		main(int argc, char **argv)
 		if (frameTicks < 1000 / window.getRefreshRate())
 			SDL_Delay(1000 / window.getRefreshRate() - frameTicks);
 	}
+	
 	window.cleanUp();
 	SDL_Quit();
 
