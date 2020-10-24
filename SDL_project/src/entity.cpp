@@ -19,22 +19,19 @@ void Entity::pollEvents(SDL_Event &event)
 
 void Entity::playerMove()
 {
-	std::cout << "entered playermove" << std::endl;
+	printf("playermove\n");
 	Vector2f currentAxis = Vector2f(0, 0);
 
 	const Uint8 *keyState = SDL_GetKeyboardState(NULL);
-	if (keyState[SDLK_a])
+	if (keyState[SDL_SCANCODE_A])
 		currentAxis -= Vector2f(50, 0);
-	if (keyState[SDLK_d])
-	{
-		std::cout << "Yikes";
+	if (keyState[SDL_SCANCODE_D])
 		currentAxis += Vector2f(50, 0);
-	}
-	if (keyState[SDLK_w])
+	if (keyState[SDL_SCANCODE_W])
 		currentAxis -= Vector2f(0, 50);
-	if (keyState[SDLK_a])
+	if (keyState[SDL_SCANCODE_S])
 		currentAxis += Vector2f(0, 50);
-	std::cout << "current axis is" << currentAxis.x << ", " << currentAxis.y << std::endl;
+	//std::cout << "current axis is" << currentAxis.x << ", " << currentAxis.y << std::endl;
 	moveEntity(currentAxis);
 }
 

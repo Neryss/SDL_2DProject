@@ -14,7 +14,8 @@ void pollEvents(RenderWindow &window, Entity &entity)
 	if(SDL_PollEvent(&event))
 	{
 		window.pollEvents(event);
-		entity.pollEvents(event);
+		//entity.pollEvents(event);
+		entity.playerMove();
 	}
 }
 
