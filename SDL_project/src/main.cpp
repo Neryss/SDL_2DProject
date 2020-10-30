@@ -11,6 +11,7 @@ void pollEvents(RenderWindow &window, Entity &entity)
 {
 	SDL_Event event;
 
+	entity.playerMove();
 	if(SDL_PollEvent(&event))
 	{
 		window.pollEvents(event);
@@ -29,19 +30,12 @@ int		main(int argc, char **argv)
 	SDL_Texture *playerTexture = window.loadTexture("res/gfx/player_no_anim.png");
 
     std::vector<Entity> entitiees = {Entity(Vector2f(1, 1), playerTexture), 
-			  					     Entity(Vector2f(15, 0), groundTexture),
-	 					  			 Entity(Vector2f(30, 0), groundTexture)};
+									Entity(Vector2f(15, 0), groundTexture),
+									Entity(Vector2f(30, 0), groundTexture)};
 	{
 		Entity test(Vector2f(100, 20), groundTexture);
 		entitiees.push_back(test);
 	}
-	//test for first vector operator
-	Vector2f t1(0, 0);
-	Vector2f t2(10, 10);
-	Vector2f res(0, 0);
-	Vector2f mousePos(0, 0);
-	res = t1 + t2;
-	res.print();
 
 	const float deltaTime = 0.01f;
 	float accumulator = 0.0f;
@@ -49,37 +43,27 @@ int		main(int argc, char **argv)
 
 	while(!window.isClosed())
 	{
-		//int startTicks = SDL_GetTicks();
+		int frameTicks = 0;
 		float newTime = utils::hireTimeInSeconds();
 		float frameTime = newTime - currentTime;
 
 		currentTime = newTime;
 		accumulator += frameTime;
-
 		while(accumulator >= deltaTime)
 		{
 			pollEvents(window, entitiees[0]);
-			entitiees[0].playerMove();
 			entitiees[1].setPos(window.getMousePos());
 			accumulator -= deltaTime;
 		}
-
 		window.clear();
 		for(Entity &e: entitiees)
-		{
 			window.render(e);
-		}
-
 		window.display();
-		
-		int frameTicks = SDL_GetTicks();
-		
+		frameTicks = SDL_GetTicks();
 		if (frameTicks < 1000 / window.getRefreshRate())
 			SDL_Delay(1000 / window.getRefreshRate() - frameTicks);
 	}
-	
 	window.cleanUp();
 	SDL_Quit();
-
 	return(0);
 }
