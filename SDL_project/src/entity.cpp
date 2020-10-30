@@ -30,6 +30,7 @@ void Entity::playerMove()
 		currentAxis -= Vector2f(0, 50);
 	if (keyState[SDL_SCANCODE_S])
 		currentAxis += Vector2f(0, 50);
+	printf("current vel is %d\n", currentAxis);
 	moveEntity(currentAxis);
 }
 

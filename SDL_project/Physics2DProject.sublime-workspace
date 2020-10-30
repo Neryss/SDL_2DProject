@@ -45,6 +45,9 @@
 			]
 		]
 	},
+	"buffers":
+	[
+	],
 	"build_system": "",
 	"build_system_choices":
 	[
@@ -87,8 +90,13 @@
 		"side_bar_visible": false,
 		"status_bar_visible": false
 	},
+	"expanded_folders":
+	[
+		"/C/Users/kuroy/Desktop/SDL_2DProject/SDL_project"
+	],
 	"file_history":
 	[
+		"/C/Users/kuroy/Desktop/SDL_2DProject/SDL_project/Physics2DProject.sublime-project",
 		"/C/Users/kuroy/Desktop/SDL_2DProject/SDL_project/include/PlayerInput.hpp",
 		"/C/Users/kuroy/Desktop/SDL_2DProject/SDL_project/src/main.cpp",
 		"/C/Users/kuroy/Desktop/SDL_2DProject/SDL_project/include/KeyPressed.hpp",
@@ -127,6 +135,14 @@
 		"whole_word": false,
 		"wrap": true
 	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
 	"incremental_find":
 	{
 		"height": 27.0
@@ -167,6 +183,7 @@
 		"height": 0.0
 	},
 	"pinned_build_system": "Build Debug",
+	"project": "Physics2DProject.sublime-project",
 	"replace":
 	{
 		"height": 50.0
@@ -199,6 +216,7 @@
 		],
 		"width": 0.0
 	},
+	"selected_group": 0,
 	"settings":
 	{
 	},

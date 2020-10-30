@@ -15,7 +15,6 @@ void pollEvents(RenderWindow &window, Entity &entity)
 	{
 		window.pollEvents(event);
 		//entity.pollEvents(event);
-		entity.playerMove();
 	}
 }
 
@@ -60,6 +59,7 @@ int		main(int argc, char **argv)
 		while(accumulator >= deltaTime)
 		{
 			pollEvents(window, entitiees[0]);
+			entitiees[0].playerMove();
 			entitiees[1].setPos(window.getMousePos());
 			accumulator -= deltaTime;
 		}
